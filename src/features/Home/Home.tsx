@@ -1,6 +1,7 @@
 import { RandomPassword } from "components/RandomPassword";
 import React from "react";
 import {
+  ButtonsWrapper,
   HomeWrapper,
   LabelSlider,
   SliderPasswordLength,
@@ -55,8 +56,10 @@ export const Home: React.FC = () => {
           />
           <LabelSlider>Tamanho da senha: {passLength} </LabelSlider>
         </SliderWrapper>
-        <Button text="Gerar Senha" onClick={onGeneratePassword} />
-        <Button text="Copiar Senha" onClick={onCopyPassword} />
+        <ButtonsWrapper>
+          <Button text="Gerar Senha" onClick={onGeneratePassword} />
+          <Button text="Copiar Senha" onClick={onCopyPassword} />
+        </ButtonsWrapper>
       </HomeWrapper>
       <AlertNotice
         open={open}

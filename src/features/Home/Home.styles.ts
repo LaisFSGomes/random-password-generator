@@ -57,3 +57,13 @@ export const SliderPasswordLength = styled(Slider)({
 export const LabelSlider = styled(Typography)({
 
 });
+
+export const ButtonsWrapper = styled(Box)({
+    display: "flex",
+    width: "80%",
+    justifyContent: "space-between",
+    "@media (max-width: 750px)": {
+        flexDirection: "column",
+        alignItems: "center",
+    }
+});
