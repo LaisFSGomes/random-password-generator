@@ -1,17 +1,15 @@
-import { AppBarr } from 'components/AppBar';
+import { AppBar } from 'components/AppBar';
 import { Footer } from 'components/Footer';
 import { Home } from 'features/Home';
 import React from 'react';
 import './App.css';
 
-function App() {
+export const App: React.FC = () => {
   return (
     <div className="App">
-      <AppBarr />
+      <AppBar />
       <Home />
       <Footer />
     </div>
   );
-}
-
-export default App;
+};

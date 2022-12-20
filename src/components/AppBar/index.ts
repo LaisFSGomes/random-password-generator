@@ -1,1 +1,1 @@
-export { AppBarr } from "./AppBarr";
+export { AppBar } from "./AppBar";

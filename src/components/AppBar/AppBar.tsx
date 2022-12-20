@@ -1,7 +1,7 @@
 import React from "react";
-import { AppBarBox, Title, Waves } from "./AppBarr.styles";
+import { AppBarBox, Title, Waves } from "./AppBar.styles";
 
-export const AppBarr: React.FC = () => {
+export const AppBar: React.FC = () => {
   return (
     <React.Fragment>
       <AppBarBox>

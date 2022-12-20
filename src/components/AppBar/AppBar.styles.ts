@@ -48,7 +48,9 @@ export const Waves = styled(Box)({
         },
     },
     "@media (max-width: 600px)": {
-        width: "calc(152% + 1.3px)",
         height: "100px",
+        "& svg": {
+            height: "30px",
+        },
     },
 });
