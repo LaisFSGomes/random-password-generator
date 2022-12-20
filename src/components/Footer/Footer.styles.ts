@@ -1,22 +1,22 @@
 import { styled } from "@mui/system";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export const FooterWrapper = styled(Box)({
     display: "flex",
     alignContent: "center",
     justifyContent: "center",
-    backgroundColor: "gray",
+    background: "linear-gradient(313deg, rgba(249,86,179,1) 43%, rgba(235,125,14,1) 100%)",
     alighSelf: "flex-end",
-    
-    "& h1": {
-        textAlign: "center",
-        color: "white",
-        fontSize: "2rem",
-        "@media (max-width: 600px)": {
-            fontSize: "1.5rem",
-        },
-        "@media (max-width: 300px)": {
-            fontSize: "1rem",
-        },
+    padding: "10px",
+});
+export const Title = styled(Typography)({
+    color: "#FFFFFF",
+    textAlign: "center",
+    fontSize: "1rem",
+    "@media (max-width: 600px)": {
+        fontSize: "0.8rem",
+    },
+    "@media (max-width: 350px)": {
+        fontSize: "0.7rem",
     },
 });

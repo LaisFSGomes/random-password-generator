@@ -1,10 +1,11 @@
 import React from "react";
-import { FooterWrapper } from "./Footer.styles";
+import { FooterWrapper, Title } from "./Footer.styles";
 
 export const Footer: React.FC = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <FooterWrapper>
-      <h1>Footer</h1>
+      <Title> © {currentYear} Todos os direitos reservados. Github: LaisFSGomes</Title>
     </FooterWrapper>
   );
 };
