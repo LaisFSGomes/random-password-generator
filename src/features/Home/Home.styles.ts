@@ -7,7 +7,6 @@ export const HomeWrapper = styled(Box)({
     justifyContent: "center",
     alignItems: "center",
     gap: "1rem",
-    border: "1px solid #555",
     width: "60%",
     padding: "5rem",
     alignSelf: "center",

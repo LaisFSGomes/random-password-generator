@@ -12,7 +12,7 @@ import { AlertNotice } from "components/AlertNotice";
 import { Button } from "components/Button";
 
 export const Home: React.FC = () => {
-  const [password, setPassword] = React.useState<string>("");
+  const [password, setPassword] = React.useState<string>("Clique em gerar senha");
   const [open, setOpen] = React.useState(false);
   const [passLength, setPassLength] = React.useState<
     number | string | Array<number | string>
