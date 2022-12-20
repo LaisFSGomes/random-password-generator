@@ -1,28 +1,31 @@
 import { RandomPassword } from "components/RandomPassword";
 import React from "react";
-import { HomeWrapper } from "./Home.styles";
+import {
+  HomeWrapper,
+  LabelSlider,
+  SliderPasswordLength,
+  SliderWrapper,
+} from "./Home.styles";
 import copy from "copy-to-clipboard";
 import { AlertNotice } from "components/AlertNotice";
 import { Button } from "components/Button";
-import { InputSlider } from "components/InputSlider";
 
 export const Home: React.FC = () => {
   const [password, setPassword] = React.useState<string>("");
-  const [passLength, setPassLength] = React.useState<number>(8);
   const [open, setOpen] = React.useState(false);
+  const [passLength, setPassLength] = React.useState<
+    number | string | Array<number | string>
+  >(10);
 
-  function valuetext(value: number) {
-    return `${value}`;
-  }
-  const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
-    setPassLength(e.target.valueAsNumber);
+  const onChangeLengthSlider = (event: Event, newValue: number | number[]) => {
+    setPassLength(newValue);
   };
 
   const handleClose = () => setOpen(false);
   const onGeneratePassword = () => {
     const chars =
       "abcdefghijklmnopqrstuvwxyz!@#$%^&*()-+<>ABCDEFGHIJKLMNOP1234567890";
-    
+
     let pass = "";
     for (let i = 0; i < passLength; i++) {
       const x = Math.floor(Math.random() * chars.length);
@@ -37,21 +40,25 @@ export const Home: React.FC = () => {
   return (
     <React.Fragment>
       <HomeWrapper>
-        {/* <InputSlider
-            label="Quantidade de caracteres"
-            defaultValue={8}
-            getAriaValueText={valuetext}
-            step={1}
-            min={8}
-            max={24} 
-            value={passLength}
-            onChange={handleChange}
-        /> */}
         <RandomPassword value={password} />
+        <SliderWrapper>
+          <SliderPasswordLength
+            id="input-slider"
+            value={typeof passLength === "number" ? passLength : 0}
+            onChange={onChangeLengthSlider}
+            aria-labelledby="input-slider"
+            marks
+            min={8}
+            max={30}
+            step={1}
+            defaultValue={10}
+          />
+          <LabelSlider>Tamanho da senha: {passLength} </LabelSlider>
+        </SliderWrapper>
         <Button text="Gerar Senha" onClick={onGeneratePassword} />
         <Button text="Copiar Senha" onClick={onCopyPassword} />
       </HomeWrapper>
-      <AlertNotice 
+      <AlertNotice
         open={open}
         handleClose={handleClose}
         title="Senha copiada com sucesso!"
