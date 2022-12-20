@@ -1,7 +1,10 @@
 import React from "react";
+import DoneRoundedIcon from '@mui/icons-material/DoneRounded';
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import {
   Alert,
   ModalDescription,
+  ModalTextWrapper,
   ModalTitle,
   ModalWrapper,
 } from "./AlertNotice.styles";
@@ -26,12 +29,15 @@ export const AlertNotice: React.FC<AlertNoticeProps> = ({
       aria-describedby="modal-modal-description"
     >
       <ModalWrapper>
-        <ModalTitle id="modal-modal-title" variant="h6">
-          {title}
-        </ModalTitle>
-        <ModalDescription id="modal-modal-description" sx={{ mt: 2 }}>
-          {description}
-        </ModalDescription>
+        <CheckCircleIcon sx={{ fontSize: 50, color: "#F95DB8" }} />
+        <ModalTextWrapper>
+          <ModalTitle id="modal-modal-title" variant="h6">
+            {title}
+          </ModalTitle>
+          <ModalDescription id="modal-modal-description" sx={{ mt: 2 }}>
+            {description}
+          </ModalDescription>
+        </ModalTextWrapper>
       </ModalWrapper>
     </Alert>
   );
