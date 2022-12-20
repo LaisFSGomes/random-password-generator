@@ -1,13 +1,15 @@
-import { Button } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 
 export const ButtonWrapper = styled(Button)({
-    background: "#BBBFCA",
-    padding: "0.1rem 0.6rem",
+    background: "#F956B3",
+    padding: "0.4rem 0.8rem",
     "&:hover": {
-        background: "#BBBBBB",
+        transition: "0.5s linear",
+        background: "#EB7B13",
     },
-    "& span": {
-        textTransform: "none",
-    },
+});
+export const TextButton = styled(Typography)({
+    color: "#FFFFFF",
+    fontSize: "1.2rem",
 });

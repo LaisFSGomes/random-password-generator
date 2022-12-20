@@ -1,5 +1,5 @@
 import React from "react";
-import { ButtonWrapper } from "./Button.styles";
+import { ButtonWrapper, TextButton } from "./Button.styles";
 interface ButtonProps {
   text: string;
   onClick: () => void;
@@ -7,7 +7,7 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({ text, onClick }) => {
   return (
     <ButtonWrapper variant="contained" onClick={onClick}>
-        <span>{text}</span>
+        <TextButton>{text}</TextButton>
     </ButtonWrapper>
   );
 };
